@@ -11,5 +11,6 @@ export default async function Home({
     home: { heroSection: dict },
   } = await getDictionary(lang);
 
+  console.log(dict);
   return <LandingPage dict={dict} />;
 }
