@@ -9,15 +9,7 @@ const useProject = () => {
   const [ethPrice, setEthPrice] = useState<string>("");
   const [credits, setCredits] = useState<Credit[]>([defaultCredit]);
 
-  console.log(
-    "SWEETS PROJECT",
-    name,
-    description,
-    animationUrl,
-    image,
-    ethPrice,
-    credits
-  );
+  console.log("SWEETS PROJECT", name, description, animationUrl, image);
   return {
     credits,
     setCredits,
