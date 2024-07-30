@@ -37,14 +37,12 @@ const useSoundCreate = () => {
         console.error("Wallet not found");
         return;
       }
-
       const { uri: metadataUri } = await uploadJson({
         name,
         description,
         image,
         animation_url: animationUrl,
       });
-
       const { edition, formattedSalt } =
         await publicClient.editionV2.getExpectedEditionAddress({
           deployer: walletClient.account.address,
@@ -56,8 +54,8 @@ const useSoundCreate = () => {
         chain: walletClient.chain,
         createSplit: null,
         editionConfig: {
-          baseURI: `ipfs://${metadataUri}`,
-          contractURI: `ipfs://${metadataUri}`,
+          baseURI: metadataUri,
+          contractURI: metadataUri,
           fundingRecipient: walletClient.account.address,
           name,
           royaltyBPS: 500,
@@ -82,7 +80,7 @@ const useSoundCreate = () => {
         owner: walletClient.account.address,
         tierConfigs: [
           {
-            baseURI: `ipfs://${metadataUri}`,
+            baseURI: metadataUri,
             cutoffTime: 0,
             isFrozen: false,
             maxMintableLower: 0,
