@@ -15,7 +15,6 @@ const ImageSelect = () => {
     const file = event.target.files[0];
     if (file) {
       const { uri } = await uploadFile(file);
-      console.log("SWEETS URI", uri);
       setImage(uri);
     }
   };

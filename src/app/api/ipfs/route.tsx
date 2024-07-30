@@ -7,6 +7,5 @@ export async function POST(request: NextRequest) {
   data.append("file", file);
   data.append("pinataMetadata", JSON.stringify({ name: "File to upload" }));
   const cid = await saveFile(data);
-  console.log("SWEETS CID", cid);
   return Response.json({ cid }, { status: 200 });
 }
