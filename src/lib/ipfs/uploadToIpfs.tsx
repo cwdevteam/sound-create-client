@@ -1,4 +1,9 @@
-export const uploadFile = async (file: File) => {
+export type IPFSUploadResponse = {
+  cid: string;
+  uri: string;
+};
+
+export const uploadFile = async (file: File): Promise<IPFSUploadResponse> => {
   try {
     const data = new FormData();
     data.set("file", file);
@@ -11,6 +16,6 @@ export const uploadFile = async (file: File) => {
     return { cid, uri: `ipfs://${cid}` };
   } catch (error) {
     console.error(error);
-    return { cid: null, uri: null };
+    return { cid: "", uri: "" };
   }
 };
