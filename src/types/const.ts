@@ -1,6 +1,4 @@
 import { ReactNode } from "react";
-
-import { Locale } from "@/../i18n.config";
 import { PlayMode } from "@/lib/enum";
 import { Address } from "viem";
 import { Credit } from "./projectMetadataForm";
@@ -9,7 +7,6 @@ export type ProjectTab = "project" | "contract" | "setting" | "zora";
 
 export interface ProjectPageProps {
   params: {
-    lang: Locale;
     id: string;
   };
 }

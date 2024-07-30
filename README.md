@@ -24,10 +24,8 @@ The project is structured as follows:
   - `env.ts` - a zod schema used to validate the app's environment variables.
   - `middleware.ts` - the app's middleware, including authentication and authorization.
 - `supabase/` the Supabase schema, config, and migration files.
-- `i18n.config.ts` - internationalization configuration.
 - `package.json`
 - etc...
-
 
 ## Contributing
 
