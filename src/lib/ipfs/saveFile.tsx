@@ -1,5 +1,3 @@
-const pinataSDK = require("@pinata/sdk");
-
 const saveFile = async (data: any) => {
   try {
     const response = await fetch(
