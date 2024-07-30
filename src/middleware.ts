@@ -1,8 +1,6 @@
 import { chain } from '@/middleware/util'
-import { withLocale } from '@/middleware/withLocale'
 
 export const middleware = chain([
-  withLocale,
 ])
 
 export const config = {

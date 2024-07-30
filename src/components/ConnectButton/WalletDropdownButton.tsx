@@ -6,20 +6,18 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuTrigger
+  DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Icons } from "../Icons";
 import NoSSR from "../NoSSR";
 import { Button } from "@/components/ui/button";
 import ConnectButton from ".";
-import useClipboard from "@/hooks/useClipboard";
 import truncateAddress from "@/lib/truncateAddress";
 
 export default function WalletDropdownButton() {
   const { address } = useAccount();
   const { disconnect } = useDisconnect();
   const { push } = useRouter();
-  const { isCopied, copyToClipboard } = useClipboard();
 
   const redirectProfile = () => {
     push("/profile");
@@ -38,9 +36,6 @@ export default function WalletDropdownButton() {
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
-            <DropdownMenuItem onClick={() => copyToClipboard(address!)}>
-              {!isCopied ? "Copy Address" : "Copied"}
-            </DropdownMenuItem>
             <DropdownMenuItem onClick={redirectProfile}>
               Profile
             </DropdownMenuItem>
